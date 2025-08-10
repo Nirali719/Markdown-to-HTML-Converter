@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Markdown to HTML Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Syntax Highlighting CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+  <header>
+    <h1>Markdown to HTML Converter</h1>
+    <div class="buttons">
+      <button id="toggleTheme">🌙 Dark Mode</button>
+      <button id="showAbout">📘 Syntax Guide</button>
+      <button id="voiceBtn">🎤 Voice</button>
+      <button id="copyHtml">📋 Copy HTML</button>
+      <button id="downloadHTML">⬇ Download HTML</button>
+      <button id="clearEditor">🗑 Clear</button>
+    </div>
+  </header>
+
+  <div id="aboutModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeAbout" class="close">&times;</span>
+      <h2>📘 Syntax Guide</h2>
+      <ul>
+        <li><strong>Basic Paragraph:</strong><br>
+          <code>This is a normal paragraph.</code>
+        </li>
+        <li><strong>Heading 1:</strong><br>
+            <code>#This paragraph is Heading 1</code>
+          </li>
+        <li><strong>Heading 2:</strong><br>
+            <code>##This paragraph is Heading 2</code>
+          </li>
+        <li><strong>Heading 3:</strong><br>
+            <code>###This paragraph is Heading 3</code>
+          </li>
+        <li><strong>Bold Paragraph:</strong><br>
+          <code>**This paragraph is bold**</code>
+        </li>
+        <li><strong>Italic Paragraph:</strong><br>
+          <code>*This paragraph is italic*</code>
+        </li>
+        <li><strong>Bold + Italic:</strong><br>
+          <code>***Bold and italic text***</code>
+        </li>
+        <li><strong>Lists (Ordered & Unordered):</strong><br>
+            <code>- Item 1<br>* Item 2<br>1. First item<br>2. Second item</code>
+        </li>
+        <li><strong>Link:</strong><br>
+            <code>This is a [link](https://example.com)</code>
+          </li>
+        <li><strong>Images:</strong><br>
+            <code>[Alt text](image-url "Optional title")</code>
+        </li>
+          
+        <li><strong>Code Blocks:</strong><br>
+            <code>Use backticks:<br>`inline code`<br><br>Use triple backticks for multi-line:<br>```<br>code block<br>```</code>
+        </li>  
+        <li><strong>Blockquote:</strong><br>
+          <code>> This is a quoted paragraph</code>
+        </li>
+        <li><strong>Highlighting Text:</strong><br>
+            <code>==highlighted text==</code>
+        </li>
+        <li><strong>Subscript:</strong><br>
+            <code>H~2~O</code>
+        </li>
+        <li><strong>Superscript:</strong><br>
+            <code>E=mc^2^</code>
+        </li>
+        <li><strong>Mathematical Expressions:</strong><br>
+            <code>Inline: $a^2 + b^2 = c^2$<br>
+            Block: $$\int_0^\infty e^{-x} dx = 1$$</code>
+        </li>
+          
+        <li><strong>Strikethrough:</strong><br>
+            <code>~~This text is crossed out~~</code>
+        </li>
+        <li><strong>Horizontal Line:</strong><br>
+            <code>---</code> or <code>___</code>
+        </li>   
+        <li><strong>Tables:</strong><br>
+            <code>| Name | Age |<br>|------|-----|<br>| Alice | 24 |<br>| Bob | 27 |</code>
+        </li>
+                 
+        <li><strong>Comments (Invisible):</strong><br>
+            <code>[//]: # (This is a comment)</code>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <main>
+    <textarea id="markdownInput" placeholder="# Start typing your markdown..."></textarea>
+    <div id="htmlPreview"></div>
+  </main>
+
+  <footer>
+    <p>Created by <strong>Your Name</strong> | CSI Task</p>
+  </footer>
+
+  <!-- Syntax Highlighting JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
